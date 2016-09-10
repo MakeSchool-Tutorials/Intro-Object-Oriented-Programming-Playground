@@ -12,12 +12,48 @@
 
 class Tiger {
     // copy your Tiger class from the previous section!
-
+    let name: String
+    let favoriteFood = "meat"
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func sleep() {
+        print("\(self.name) sleeps for 8 hours")
+    }
+    
+    func eat(food: String) {
+        print("\(self.name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!!! \(self.name) wants more \(food)")
+        } else {
+            self.sleep()
+        }
+    }
 }
 
 class Bear {
     // complete the Bear class here!
-
+    let name: String
+    let favoriteFood = "fish"
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func sleep() {
+        print("\(self.name) hibernates for 4 months")
+    }
+    
+    func eat(food: String) {
+        print("\(self.name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!!! \(self.name) wants more \(food)")
+        } else {
+            self.sleep()
+        }
+    }
 }
 
 
@@ -40,12 +76,12 @@ class Bear {
 
  */
 
-//let tigger = Tiger(name: "Tigger")
-//tigger.eat(food: "meat")
-//tigger.eat(food: "kibble")
-//let pooh = Bear(name: "Pooh")
-//pooh.eat(food: "fish")
-//pooh.eat(food: "meat")
+let tigger = Tiger(name: "Tigger")
+tigger.eat(food: "meat")
+tigger.eat(food: "kibble")
+let pooh = Bear(name: "Pooh")
+pooh.eat(food: "fish")
+pooh.eat(food: "meat")
 
 
 

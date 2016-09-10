@@ -46,6 +46,7 @@ instanceTwo.increaseAndCheckTheCounter()
 
  
  */
+
 class CrushingExampleClass: AnotherExampleClass {
     static func crushTheCounter() {
         CrushingExampleClass.counter = 0
@@ -53,7 +54,8 @@ class CrushingExampleClass: AnotherExampleClass {
     }
 }
 let instanceThree = CrushingExampleClass(message: "WHAT! NO! It's now...")
-
+instanceThree.increaseAndCheckTheCounter()
+CrushingExampleClass.crushTheCounter()
 
 /*:
  
@@ -75,55 +77,118 @@ let instanceThree = CrushingExampleClass(message: "WHAT! NO! It's now...")
 // Copy your Animal class here and modify it to automatically count population
 // Hint: Modify the initializer method to count the number of animals created
 class Animal {
-    // here, make yourself a new type variable!
+    let name: String
+    let favoriteFood: String
+    static var population = 0
     
-    init(name: String) {
-        
+    init(name: String, favoriteFood: String) {
+        self.name = name
+        self.favoriteFood = favoriteFood
+        Animal.population += 1
     }
     
-    func eat(food: String) {
-        
+    static func populationCount() -> Int {
+        return Animal.population
     }
     
     func sleep() {
-        
+        print("\(self.name) sleeps for 8 hours")
+    }
+    
+    func eat(food: String) {
+        print("\(self.name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!!! \(self.name) wants more \(food)")
+        } else {
+            self.sleep()
+        }
     }
 }
 
-// Copy your Tiger class here
 class Tiger: Animal {
-    
-}
-
-// Copy your Bear class here
-class Bear: Animal {
-    
-}
-
-// Copy your Unicorn class here
-class Unicorn: Animal {
-    
-}
-
-// Copy your Giraffe class here
-class Giraffe: Animal {
-    
-}
-
-// Copy your Bee class here
-class Bee: Animal {
-    
-}
-
-// Copy your Zookeeper class here
-class Zookeeper {
     init(name: String) {
-        // complete your init function
+        // don't forget to correct the call to the superclass initializer!
+        super.init(name: name, favoriteFood: "meat")
+    }
+}
+
+class Bear: Animal {
+    // complete the Bear class here, using the completed Tiger class as an example
+    init(name: String) {
+        super.init(name: name, favoriteFood: "fish")
+    }
+    
+    // here, we override the sleep function
+    override func sleep() {
+        // add in your Bear-specific sleep code here
+        print("\(self.name) hibernates for 4 months")
+    }
+}
+
+class Unicorn: Animal {
+    init(name: String) {
+        // don't forget to correct the call to the superclass initializer!
+        super.init(name: name, favoriteFood: "marshmallows")
+    }
+    
+    override func sleep() {
+        // your overridden sleep code...
+        print("\(self.name) sleeps in a cloud")
+    }
+}
+
+class Giraffe: Animal {
+    init(name: String) {
+        // don't forget to correct the call to the superclass initializer!
+        super.init(name: name, favoriteFood: "leaves")
+    }
+    
+    override func eat(food: String) {
+        // check here if you don't like the food you were given...
+        // don't forget a call to the superclass eat function!
+        if food == favoriteFood {
+            super.eat(food: food)
+            self.sleep()
+        } else {
+            print("YUCK!!! \(self.name) will not eat \(food)")
+        }
+    }
+}
+
+class Bee: Animal {
+    init(name: String) {
+        super.init(name: name, favoriteFood: "pollen")
+    }
+    
+    override func eat(food: String) {
+        if food == favoriteFood {
+            super.eat(food: food)
+            self.sleep()
+        } else {
+            print("YUCK!!! \(self.name) will not eat \(food)")
+        }
+    }
+    
+    override func sleep() {
+        print("\(name) never sleeps")
+    }
+}
+
+class Zookeeper {
+    // put instance variables here
+    let name: String
+    
+    init(name: String) {
+        // save name to an instance variable
+        self.name = name
     }
     
     func feed(animals: [Animal], food: String) {
         // complete your feedAnimals function here.
-        
+        print("\(name) is feeding \(food) to \(animals.count) of \(Animal.populationCount()) total animals")
+        for animal in animals {
+            animal.eat(food: food)
+        }
     }
 }
 

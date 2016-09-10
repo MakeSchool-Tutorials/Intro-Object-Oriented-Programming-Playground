@@ -76,9 +76,10 @@ anotherExampleObject.myVariable
 
  */
 
-
-
-
+objectCreatedFromExample.myVariable = "This is an example of properties"
+anotherExampleObject.myVariable = "This property is different because it belongs to another object"
+print(objectCreatedFromExample.myVariable)
+print(anotherExampleObject.myVariable)
 
 /*:
 
@@ -133,21 +134,27 @@ AnotherExampleObject.myVariable
 
 class Tiger {
     // put your instance variables here!
-
+    let name: String
+    let favoriteFood = "meat"
 
     init(name: String) {
         // put your initializer content here
-
+        self.name = name
     }
 
     func sleep() {
         // complete your sleep function here, noting the change from global to instance variables
-
+        print("\(self.name) sleeps for 8 hours")
     }
 
     func eat(food: String) {
         // complete your eat function here!
-
+        print("\(self.name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!!! \(self.name) wants more \(food)")
+        } else {
+            self.sleep()
+        }
     }
 }
 

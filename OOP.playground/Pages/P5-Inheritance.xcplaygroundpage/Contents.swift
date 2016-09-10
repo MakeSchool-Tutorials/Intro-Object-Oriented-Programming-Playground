@@ -8,21 +8,25 @@
 
  */
 class Animal {
-    // Put your instance variables here
-
+    let name: String
+    let favoriteFood: String
+    
     init(name: String, favoriteFood: String) {
-        // put your initializer content here
-
+        self.name = name
+        self.favoriteFood = favoriteFood
     }
-
+    
     func sleep() {
-        // complete your sleep function here, noting the change from global to instance variables
-
+        print("\(self.name) sleeps for 8 hours")
     }
-
+    
     func eat(food: String) {
-        // complete your eat function here!
-
+        print("\(self.name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!!! \(self.name) wants more \(food)")
+        } else {
+            self.sleep()
+        }
     }
 }
 /*:
@@ -80,8 +84,8 @@ let subclassInstance = ExampleSubclass(message: "Hi there Make School student. W
 
  */
 
-
-
+superclassInstance.doStuff()
+subclassInstance.doStuff()
 
 /*:
 
@@ -91,8 +95,8 @@ let subclassInstance = ExampleSubclass(message: "Hi there Make School student. W
 
  */
 
-
-
+superclassInstance.sayGoodbye()
+subclassInstance.sayGoodbye()
 
 /*:
 
@@ -113,19 +117,21 @@ class Tiger: Animal {
 
     init(name: String) {
         // don't forget to correct the call to the superclass initializer!
-        super.init(name: "", favoriteFood: "")
+        super.init(name: name, favoriteFood: "meat")
     }
 
 }
 
 class Bear: Animal {
     // complete the Bear class here, using the completed Tiger class as an example
-
+    init(name: String) {
+        super.init(name: name, favoriteFood: "fish")
+    }
 
     // here, we override the sleep function
     override func sleep() {
         // add in your Bear-specific sleep code here
-
+        print("\(self.name) hibernates for 4 months")
     }
 }
 
@@ -148,10 +154,10 @@ class Bear: Animal {
 
  */
 
-//let tigger = Tiger(name: "Tigger")
-//tigger.eat(food: "meat")
-//let pooh = Bear(name: "Pooh")
-//pooh.eat(food: "fish")
-//pooh.eat(food: "meat")
+let tigger = Tiger(name: "Tigger")
+tigger.eat(food: "meat")
+let pooh = Bear(name: "Pooh")
+pooh.eat(food: "fish")
+pooh.eat(food: "meat")
 
 //: [Previous](@previous) | [Next](@next)

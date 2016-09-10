@@ -10,29 +10,48 @@
 
 // Copy your Animal class here
 class Animal {
-
+    let name: String
+    let favoriteFood: String
+    
     init(name: String, favoriteFood: String) {
-        // put your initializer content here
-
+        self.name = name
+        self.favoriteFood = favoriteFood
     }
-
-    func eat(food: String) {
-
-    }
-
+    
     func sleep() {
-
+        print("\(self.name) sleeps for 8 hours")
+    }
+    
+    func eat(food: String) {
+        print("\(self.name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!!! \(self.name) wants more \(food)")
+        } else {
+            self.sleep()
+        }
     }
 }
 
-// Copy your Tiger class here
 class Tiger: Animal {
-
+    
+    init(name: String) {
+        // don't forget to correct the call to the superclass initializer!
+        super.init(name: name, favoriteFood: "meat")
+    }
+    
 }
 
-// Copy your Bear class here
 class Bear: Animal {
-
+    // complete the Bear class here, using the completed Tiger class as an example
+    init(name: String) {
+        super.init(name: name, favoriteFood: "fish")
+    }
+    
+    // here, we override the sleep function
+    override func sleep() {
+        // add in your Bear-specific sleep code here
+        print("\(self.name) hibernates for 4 months")
+    }
 }
 
 /*:
@@ -50,12 +69,12 @@ class Unicorn: Animal {
 
     init(name: String) {
         // don't forget to correct the call to the superclass initializer!
-        super.init(name: "", favoriteFood: "")
+        super.init(name: name, favoriteFood: "marshmallows")
     }
 
     override func sleep() {
         // your overridden sleep code...
-
+        print("\(self.name) sleeps in a cloud")
     }
 }
 
@@ -73,12 +92,18 @@ class Giraffe: Animal {
 
     init(name: String) {
         // don't forget to correct the call to the superclass initializer!
-        super.init(name: "", favoriteFood: "")
+        super.init(name: name, favoriteFood: "leaves")
     }
 
     override func eat(food: String) {
         // check here if you don't like the food you were given...
         // don't forget a call to the superclass eat function!
+        if food == favoriteFood {
+            super.eat(food: food)
+            self.sleep()
+        } else {
+            print("YUCK!!! \(self.name) will not eat \(food)")
+        }
     }
 }
 
@@ -93,7 +118,22 @@ class Giraffe: Animal {
 // Implement the Bee class here as a subclass of Animal
 // Hint: Implement the initializer method and override the sleep and eat methods
 class Bee: Animal {
-
+    init(name: String) {
+        super.init(name: name, favoriteFood: "pollen")
+    }
+    
+    override func eat(food: String) {
+        if food == favoriteFood {
+            super.eat(food: food)
+            self.sleep()
+        } else {
+            print("YUCK!!! \(self.name) will not eat \(food)")
+        }
+    }
+    
+    override func sleep() {
+        print("\(name) never sleeps")
+    }
 }
 
 
@@ -129,7 +169,19 @@ class Bee: Animal {
 
  */
 
-
-
+let tigger = Tiger(name: "Tigger")
+tigger.eat(food: "meat")
+let pooh = Bear(name: "Pooh")
+pooh.eat(food: "fish")
+pooh.eat(food: "meat")
+let rarity = Unicorn(name: "Rarity")
+rarity.eat(food: "marshmallows")
+rarity.sleep()
+let gemma = Giraffe(name: "Gemma")
+gemma.eat(food: "meat")
+gemma.eat(food: "leaves")
+let stinger = Bee(name: "Stinger")
+stinger.eat(food: "ice cream")
+stinger.eat(food: "pollen")
 
 //: [Previous](@previous) | [Next](@next)
