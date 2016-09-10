@@ -30,6 +30,7 @@ class Example {
  - a _default initializer_ -- the `init` thing that looks like a function but does not have the `func` keyword
  - a function called `myMethod` that prints out the value of `myVariable`
 
+ 
  - important: We generally refer to functions that belong to a class as "methods". The syntax is the same but we call them using that "dot-syntax" that you've seen a few times before.
 
  # Initializers and creating new objects from a class
@@ -70,6 +71,7 @@ anotherExampleObject.myVariable
 
  - important: Each object lives independently in memory. When you create two `String`s, they can hold different values -- same with objects created from custom classes. Each one is independent and can hold different data!
 
+ 
  - callout(Challenge): Update each objects variable to contain new values and print them out!
 
  */
@@ -116,6 +118,7 @@ AnotherExampleObject.myVariable
 
  - important: Every parameter passed into an intializer needs a parameter label by default! This is different from functions which skip the first parameter label! Look at the line above, `value` is the only parameter but it needs a label when you call it.
 
+ 
  - note: `AnotherExample`'s `myVariable` was declared with `let`, not `var`. You will not be able to update it on any instance of `AnotherExample` like you can on instances of `Example`!
 
  # Back to Tigers!
@@ -149,8 +152,8 @@ class Tiger {
 }
 
 let tigger = Tiger(name: "Tigger")
-tigger.eat("meat")
-tigger.eat("kibble")
+tigger.eat(food: "meat")
+tigger.eat(food: "kibble")
 
 /*:
  # Testing

@@ -121,7 +121,7 @@ class Zookeeper {
         // complete your init function
     }
     
-    func feedAnimals(animals: [Animal], food: String) {
+    func feed(animals: [Animal], food: String) {
         // complete your feedAnimals function here.
         
     }
@@ -159,7 +159,7 @@ let unfedGiraffe = Giraffe(name: "full Giraffe")
 let unfedBee = Bee(name: "full bee")
 
 let zookeeper = Zookeeper(name: "Zoe")
-zookeeper.feedAnimals(animals, food: "meat")
+zookeeper.feed(animals: animals, food: "meat")
 
 /*:
  ## Conclusion

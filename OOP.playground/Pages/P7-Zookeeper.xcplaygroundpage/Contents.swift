@@ -70,7 +70,7 @@ class Zookeeper {
 
     }
 
-    func feedAnimals(animals: [Animal], food: String) {
+    func feed(animals: [Animal], food: String) {
         // complete your feedAnimals function here.
 
     }
@@ -103,6 +103,6 @@ let animals: [Animal] = [
     Bee(name: "Stinger")
 ]
 let zookeeper = Zookeeper(name: "ZoeBot")
-zookeeper.feedAnimals(animals, food: "meat")
+zookeeper.feed(animals: animals, food: "meat")
 
 //: [Previous](@previous) | [Next](@next)
