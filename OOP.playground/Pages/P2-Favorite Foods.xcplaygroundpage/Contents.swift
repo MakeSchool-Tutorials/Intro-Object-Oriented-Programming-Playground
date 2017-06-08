@@ -15,6 +15,7 @@
  This function call:
 
      eat(name: "Tigger", food: "meat")
+     eat(name: "Tigger", food: "kibble")
 
  should print this output exactly:
 
