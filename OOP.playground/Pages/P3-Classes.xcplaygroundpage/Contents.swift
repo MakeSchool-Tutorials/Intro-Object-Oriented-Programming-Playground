@@ -30,6 +30,7 @@ class Example {
  - a _default initializer_ -- the `init` thing that looks like a function but does not have the `func` keyword
  - a function called `myMethod` that prints out the value of `myVariable`
 
+ 
  - important: We generally refer to functions that belong to a class as "methods". The syntax is the same but we call them using that "dot-syntax" that you've seen a few times before.
 
  # Initializers and creating new objects from a class
@@ -37,7 +38,8 @@ class Example {
  Now that we have defined the `Example` class, we can use it to create new _objects_ and save them to variables! These objects belong to a new, custom data type called `Example`. _Objects_ represent a living piece of data. You can modify their properties and call functions on them.
 
  To create a new object, we put the class name followed by parentheses. This calls the _default initializer_ (that `init()` block of code that looks like a function). _Initializers_ are used to set the values of all the variables associated with a class. As you can see above, it sets `myVariable` to `"Make School learns Object-Oriented Programming!"`.
-
+ */
+/*:
  - important: Initializers _must_ set all of the object's variables. You _will_ get an error if you do not set them all in the intializer!
 
  */
@@ -57,7 +59,8 @@ anotherExampleObject.myVariable
 /*:
 
  Both object's `myVariable` property currently contain `"Make School learns Object-Oriented Programming!"`. What happens if we change one of them? Do both change? We'll use dot syntax with an assignment operator (`=`) to update it as if it were a normal variable.
-
+ */
+/*:
  - important: You'll notice that in the above example, `myVariable` was set to the value `"Make School learns Object-Oriented Programming!"` inside of the `init()` function, or the initializer. Because `myVariable` was declared with `var`, you can update its value for _each_ of your instances!
 
  */
@@ -69,7 +72,8 @@ anotherExampleObject.myVariable
  We just changed `myVariable` on `objectCreatedFromExample`! `objectCreatedFromExample`'s `myVariable` and `anotherExampleObject`'s `myVariable` now have totally different values!
 
  - important: Each object lives independently in memory. When you create two `String`s, they can hold different values -- same with objects created from custom classes. Each one is independent and can hold different data!
-
+ */
+/*:
  - callout(Challenge): Update each objects variable to contain new values and print them out!
 
  */
@@ -115,9 +119,11 @@ AnotherExampleObject.myVariable
  and the `myVariable` for _that particular instance_ of `AnotherExample` will be set to `"Woah! OOP is pretty powerful!"`.
 
  - important: Every parameter passed into an intializer needs a parameter label by default! This is different from functions which skip the first parameter label! Look at the line above, `value` is the only parameter but it needs a label when you call it.
-
+ */
+/*:
  - note: `AnotherExample`'s `myVariable` was declared with `let`, not `var`. You will not be able to update it on any instance of `AnotherExample` like you can on instances of `Example`!
-
+ */
+/*:
  # Back to Tigers!
 
  - callout(Challenge): We have provided you with an unfinished `Tiger` class below. When completed, this class should contain two instance variables: `name` and `favoriteFood` (both with type `String`).  This class should also contain `eat` and `sleep` methods similar to the functions you wrote in Problems 1 and 2 (you can copy them from the previous page), but they need to be modified slightly.
@@ -149,8 +155,8 @@ class Tiger {
 }
 
 let tigger = Tiger(name: "Tigger")
-tigger.eat("meat")
-tigger.eat("kibble")
+tigger.eat(food: "meat")
+tigger.eat(food: "kibble")
 
 /*:
  # Testing

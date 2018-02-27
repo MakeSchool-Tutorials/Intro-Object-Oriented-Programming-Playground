@@ -149,9 +149,9 @@ class Bear: Animal {
  */
 
 //let tigger = Tiger(name: "Tigger")
-//tigger.eat("meat")
+//tigger.eat(food: "meat")
 //let pooh = Bear(name: "Pooh")
-//pooh.eat("fish")
-//pooh.eat("meat")
+//pooh.eat(food: "fish")
+//pooh.eat(food: "meat")
 
 //: [Previous](@previous) | [Next](@next)

@@ -14,7 +14,8 @@
 
  This function call:
 
-     eat("Tigger", food: "meat")
+     eat(name: "Tigger", food: "meat")
+     eat(name: "Tigger", food: "kibble")
 
  should print this output exactly:
 
@@ -35,7 +36,7 @@ func eat(name: String, food: String) {
 
 }
 
-eat("Tigger", food: "meat")
-eat("Tigger", food: "kibble")
+eat(name: "Tigger", food: "meat")
+eat(name: "Tigger", food: "kibble")
 
 //: [Previous](@previous) | [Next](@next)
