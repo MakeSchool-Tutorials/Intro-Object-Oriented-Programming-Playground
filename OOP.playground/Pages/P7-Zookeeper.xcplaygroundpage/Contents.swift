@@ -1,14 +1,14 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # An automatic Zookeeper
+ # 自動Zookeeper
 
- Zoe went in to pet the bees on her lunch break and nobody has seen her since! The animals haven't been fed, and they're getting hungry. Let's make your program more useful so that it can help any zookeeper keep track of all the animals they feed each day.
+ Zoeは昼休みにミツバチの所に行きましたが、それ以来誰も彼女の姿を見ていません!動物は餌を与えられず空腹です。飼育員が毎日餌を与える動物を追跡しやすくなるようにプログラムをもっと便利にしましょう。
 
- But first, let's copy over your animal classes from the previous page...
+ 最初に前のページのanimalクラスをコピーしましょう。
 
  */
 
-// Copy your Animal class here
+// ここにAnimalクラスをコピーしてください。
 class Animal {
 
     init(name: String) {
@@ -24,27 +24,27 @@ class Animal {
     }
 }
 
-// Copy your Tiger class here
+// ここにTigerクラスをコピーしてください。
 class Tiger: Animal {
 
 }
 
-// Copy your Bear class here
+// ここにBearクラスをコピーしてください。
 class Bear: Animal {
 
 }
 
-// Copy your Unicorn class here
+// ここにUnicornクラスをコピーしてください。
 class Unicorn: Animal {
 
 }
 
-// Copy your Giraffe class here
+// ここにGiraffeクラスをコピーしてください。
 class Giraffe: Animal {
 
 }
 
-// Copy your Bee class here
+// ここにBeeクラスをコピーしてください。
 class Bee: Animal {
 
 }
@@ -53,45 +53,45 @@ class Bee: Animal {
 
  # Zookeeper
 
- Great! Now, we're ready to create a `Zookeeper` class that contains a `name` instance variable and an initializer method that sets `name` using an argument. A zookeeper needs to feed many animals each day, so let's add a `feedAnimals` method, which should take two arguments: `animals` – an array of `Animal`s, and `food` – a string. This method should first print `"<name> is feeding <food> to <animals.count> animals"`, then iterate over the array of animals and call each animal's `eat` method, passing the value of `food` as the argument.
+ 素晴らしい！ これで`name`インスタンス変数と、引数を使って`name`を設定するイニシャライザ メソッドを持つ`Zookeeper`クラスを作成する準備ができました。飼育員は毎日たくさんの動物に餌を与えなければなりません。`Animal`の配列`animals`と文字列`food`の2つの引数を取る`feedAnimals`メソッドを追加しましょう。このメソッドは最初に`"<name>は<food>を<animals.count>匹の動物に与えています"」と出力し、動物の配列を繰り返し処理して各動物の`eat`メソッドを呼び出し、`food`の値を引数として渡します。
 
- Finally, call this `feedAnimals` method, using an array containing an instance of each animal, and your own favorite food.
+ 最後に、各動物のインスタンスと好物の餌を格納する配列を使ってこの`feedAnimals`メソッドを呼び出します。
 
- - callout(Challenge): Finish the `Zookeeper` class below!
+ - callout(課題): 下の`Zookeeper`クラスを完成させよう!
 
  */
 
-// Implement the Zookeeper class here
+// ここにZookeeperクラスを実装してください。
 class Zookeeper {
-    // put instance variables here
+    // ここにインスタンス変数を入力してください。
 
     init(name: String) {
-        // save name to an instance variable
+        // インスタンス変数に名前を保存してください。
 
     }
 
     func feed(animals: [Animal], food: String) {
-        // complete your feedAnimals function here.
+        // ここにfeedAnimals関数を完成させてください。
 
     }
 }
 
 /*:
- ## Testing
+ ## テスト
 
- The test code below should output exactly this:
+ テストコードの出力は次のようになります。
 
-     ZoeBot is feeding meat to 5 animals
-     Tigger eats meat
-     YUM!!! Tigger wants more meat
-     Pooh eats meat
-     Pooh hibernates for 4 months
-     Rarity eats meat
-     Rarity sleeps in a cloud
-     YUCK!!! Gemma will not eat meat
-     YUCK!!! Stinger will not eat meat
+     ZoeBotは肉を5匹の動物に与えています
+     Tiggerは肉を食べます
+     うまい！！！ Tiggerはもっと肉を欲しがっています
+     Poohは肉を食べます
+     Poohは4カ月冬眠します
+     Rarityは肉を食べます
+     Rarityは雲の中で眠ります
+     まずい！！！ Gemmaは肉を食べません
+     まずい！！！ Stingerは肉を食べません
 
- - callout(Hint): Create a `Zookeeper` instance with the name `"ZoeBot"`. Create an `Array` containing the animals from the previous page's test code. Pass the array to the `Zookeeper`'s `feedAnimals` method along with `"meat"`.
+ - callout(ヒント): `"ZoeBot"`という名前の`Zookeeper`インスタンスを作成してください。前のページのテストコードの動物を格納する`Array`を作成します。配列を`Zookeeper`の`feedAnimals`メソッドに`"肉"`と一緒に渡します。
 
  */
 
@@ -103,6 +103,6 @@ let animals: [Animal] = [
     Bee(name: "Stinger")
 ]
 let zookeeper = Zookeeper(name: "ZoeBot")
-zookeeper.feed(animals: animals, food: "meat")
+zookeeper.feed(animals: animals, food: "肉")
 
-//: [Previous](@previous) | [Next](@next)
+//: [前へ](@previous) | [次へ](@next)

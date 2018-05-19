@@ -1,46 +1,47 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # Introduction to Classes
+ # クラスの紹介
 
- Your friend Zoe, the zookeeper, has seen the code you wrote, and thinks it could help her. She says that the eat function you wrote in Problem 2 perfectly describes tigers. Let's write a small program to help Zoe keep track of her tigers and their eating and sleeping habits. This time we'll make a `Tiger` class! But first, let's talk about what classes and objects are...
+ あなたの友達で飼育員のZoeは、あなたが作成したコードを見て、役に立つと思いました。問題2であなたが作成したeat関数はトラを完璧に表現しています。Zoeがトラの食事や睡眠パターンを追跡するのに役立つ小さなプログラムを作成しましょう。今度は`Tiger`クラスを作成します!でも最初にクラスやオブジェクトとは何かについて話しましょう。
 
- _Classes_ are the main way in which you can encapsulate (or group together) different variables and functions, as being part of one single _object_. _Classes_ create a blueprint for outputting new objects (we'll talk about objects in just a moment)! You can declare a class like this:
+ クラスは様々な変数や関数を単一のオブジェクトの一部としてカプセル化 (グループとしてまとめる) 主な方法です。クラスは新しいオブジェクトを出力するための設計図となります (オブジェクトについてはすぐ後で取り上げます)！ クラスは次のように宣言します。
 
  */
 class Example {
     var myVariable: String
 
     init() {
-        self.myVariable = "Make School learns Object-Oriented Programming!"
+        self.myVariable = "Make Schoolはオブジェクト指向プログラミングを学習します！"
     }
 
     func myMethod() {
-        print("I am an object of type Example and I have a String instance variable containing \(self.myVariable)!")
+        print("私は型Exampleのオブジェクトであり、Stringインスタンス変数を含んでいます \(self.myVariable)!")
     }
 }
 /*:
 
- - important: The keyword `self` refers to the current object's scope. Inside of the initializer (and also inside any functions you write in your class), you refer to your class-scope variables via the `self.myVariable` syntax. This signifies that that variable is unique to the _instance_ of the class – which means that there are separate `myVariable`s for _each_ instance of the class that you _instantiate_ (or create).
+  - important: キーワード`self`は現在のオブジェクトのスコープを指します。イニシャライザ (およびクラス内に作成する関数) 内で、クラスがスコープの変数は`self.myVariable`構文で参照します。これは、この変数が該当するクラスのインスタンスに固有のものであることを示しています。つまり、クラスをインスタント化(インスタンスを作成) した各インスタンスに`myVariable`が存在するという」意味です。
 
- # What's going on?
+ # どうしましたか？
 
- The above code creates a new class called `Example`. This class has:
 
- - a single _instance variable_ called `myVariable`
- - a _default initializer_ -- the `init` thing that looks like a function but does not have the `func` keyword
- - a function called `myMethod` that prints out the value of `myVariable`
+ 上記のコードは`Example`というクラスを作成します。このクラスの内容は次のとおりです。
+
+ - `myVariable`という名前の単一のインスタンス変数
+ - 既定のイニシャライザ -- 関数のように見えるが`func`キーワードがない`init`
+ - `myVariable`の値を出力する`myMethod`という関数
 
  
- - important: We generally refer to functions that belong to a class as "methods". The syntax is the same but we call them using that "dot-syntax" that you've seen a few times before.
+ - important: クラスに属する関数は一般に「メソッド」と呼ばれます。構文は同じですが、これまでに何度か見た「ドット構文」を使って呼び出します。
 
- # Initializers and creating new objects from a class
+ # イニシャライザとクラスから新しいオブジェクトの作成
 
- Now that we have defined the `Example` class, we can use it to create new _objects_ and save them to variables! These objects belong to a new, custom data type called `Example`. _Objects_ represent a living piece of data. You can modify their properties and call functions on them.
+ `Example`クラスを定義したので、これを使って新しいオブジェクトを作成して変数に保存できます!これらのオブジェクトは新しいカスタムデータ型の`Example`に属しています。オブジェクトは生きているデータを表します。プロパティを変更して、プロパティに対して関数を呼び出すことができます。
 
- To create a new object, we put the class name followed by parentheses. This calls the _default initializer_ (that `init()` block of code that looks like a function). _Initializers_ are used to set the values of all the variables associated with a class. As you can see above, it sets `myVariable` to `"Make School learns Object-Oriented Programming!"`.
+ 新しいオブジェクトを作成するには、クラス名の後に括弧を書きます。これは既定のイニシャライザ(関数のように見える`init()`ブロック) を呼び出します。イニシャライザはクラスに関連付けられているすべての変数の値を設定するために使用します。上を見ると分かるように、`myVariable`に`"Make Schoolはオブジェクト指向プログラミングを学習します！"`を設定します。
  */
 /*:
- - important: Initializers _must_ set all of the object's variables. You _will_ get an error if you do not set them all in the intializer!
+ - important: イニシャライザはオブジェクトのすべての変数を設定しなければなりません。イニシャライザですべて設定しないとエラーが発生します！
 
  */
 let objectCreatedFromExample = Example()
@@ -49,32 +50,32 @@ let anotherExampleObject = Example()
 
  # Object properties
 
- We can access an object's _properties_ (the variables that belong to it) with dot syntax.
+ オブジェクトのプロパティ(オブジェクトに属する変数) にはドット構文でアクセスできます。
 
- - note: We call variables defined in a class _instance variables_ because they belong to a specific _instance_ (or object) of the class. The words _instance_ and _object_ are interchangable!
+ - note: クラス内で定義された変数をインスタンス変数と呼びます。クラスの特定のインスタンス(またはオブジェクト)に属しているからです。インスタンスとオブジェクトという単語はどちらも同じ意味です！
 
  */
 objectCreatedFromExample.myVariable
 anotherExampleObject.myVariable
 /*:
 
- Both object's `myVariable` property currently contain `"Make School learns Object-Oriented Programming!"`. What happens if we change one of them? Do both change? We'll use dot syntax with an assignment operator (`=`) to update it as if it were a normal variable.
+ 両方のオブジェクトの`myVariable`プロパティに現在`"Make Schoolはオブジェクト指向プログラミングを学習します！"`が格納されています。この1つを変更したらどうなるでしょうか？ 両方とも変更されるでしょうか？ ドット構文と代入演算子 (`=`) を使って通常の変数のように更新します。
  */
 /*:
- - important: You'll notice that in the above example, `myVariable` was set to the value `"Make School learns Object-Oriented Programming!"` inside of the `init()` function, or the initializer. Because `myVariable` was declared with `var`, you can update its value for _each_ of your instances!
+ - important: 上の例では、`myVariable`が`init()`関数またはイニシャライザ内で`"Make Schoolはオブジェクト指向プログラミングを学習します！"`という値に設定されています。`myVariable`は`var`と宣言されているので、各インスタンスについてその値を更新できます！
 
  */
-objectCreatedFromExample.myVariable = "Object-oriented Programming with Make School is great!"
+objectCreatedFromExample.myVariable = "Make Schoolでオブジェクト指向プログラミングを学習するのは素晴らしい！"
 objectCreatedFromExample.myVariable
 anotherExampleObject.myVariable
 /*:
 
- We just changed `myVariable` on `objectCreatedFromExample`! `objectCreatedFromExample`'s `myVariable` and `anotherExampleObject`'s `myVariable` now have totally different values!
+ `objectCreatedFromExample`の`myVariable`を変更しました！ `objectCreatedFromExample`の`myVariable`と`anotherExampleObject`の`myVariable`はまったく異なる値になっています！
 
- - important: Each object lives independently in memory. When you create two `String`s, they can hold different values -- same with objects created from custom classes. Each one is independent and can hold different data!
+ - important: 各オブジェクトはメモリ内に独立して存在します。2つの`String`を作成すると、カスタムクラスから作成したオブジェクトと同様に、異なる値を格納できます。それぞれ独立していて、異なるデータを格納できます！
  */
 /*:
- - callout(Challenge): Update each objects variable to contain new values and print them out!
+ - callout(課題): 各オブジェクト変数に新しい値を代入して、出力します！
 
  */
 
@@ -84,20 +85,20 @@ anotherExampleObject.myVariable
 
 /*:
 
- # Methods
+ # メソッド
 
- Functions created within classes are called _methods_. They are called on an instance (object) using the same dot syntax that properties use!
+ クラス内に作成された関数はメソッドと呼ばれます。インスタンス (オブジェクト) に対して、プロパティと同じドット構文を使用して呼び出されます！
 
  */
 objectCreatedFromExample.myMethod()
 anotherExampleObject.myMethod()
 /*:
 
- These method calls should have printed out a message to the console below. Methods can do anything functions can do, they just need to be called with dot syntax on an instance (object). They can have parameters and return values and are defined with the normal function syntax.
+ これらのメソッドを呼び出すと下のコンソールにメッセージが出力されます。メソッドは関数ができることをすべてこなせます。これを呼び出すには、インスタンス (オブジェクト) に対するドット構文を使う必要があるだけです。これらはパラメーターを持ち、値を返すことができ、通常の関数構文で定義されます。
 
  # Passing data into initializers
 
- You can also provide initializers that take in arguments, just like function parameters.
+ また、関数のパラメーターのように引数を取るイニシャライザを用意できます。
 
  */
 class AnotherExample {
@@ -109,47 +110,47 @@ class AnotherExample {
 }
 /*:
 
- Now, you can initialize your class like this:
+ クラスを次のように初期化できます。
 
  */
-let AnotherExampleObject = AnotherExample(value: "Woah! OOP is pretty powerful!")
+let AnotherExampleObject = AnotherExample(value: "うわ！OOPはかなり強力だ！")
 AnotherExampleObject.myVariable
 /*:
 
- and the `myVariable` for _that particular instance_ of `AnotherExample` will be set to `"Woah! OOP is pretty powerful!"`.
+ `AnotherExample`のその特定のインスタンスの`myVariable`は`"うわ！OOPはかなり強力だ！"`に設定されます。
 
- - important: Every parameter passed into an intializer needs a parameter label by default! This is different from functions which skip the first parameter label! Look at the line above, `value` is the only parameter but it needs a label when you call it.
+ - important: イニシャライザに渡されるパラメーターには、既定のパラメーター ラベルが必要です！ これは最初のパラメーター ラベルをスキップする関数とは異なります！ 上の行を見ると、`value`は唯一のパラメーターですが、呼び出す際にラベルが必要です。
  */
 /*:
- - note: `AnotherExample`'s `myVariable` was declared with `let`, not `var`. You will not be able to update it on any instance of `AnotherExample` like you can on instances of `Example`!
+ - note:`AnotherExample`の`myVariable`は`var`ではなく`let`で宣言されています。`Example`のインスタンスのように`AnotherExample`のインスタンスで更新することはできません！
  */
 /*:
  # Back to Tigers!
 
- - callout(Challenge): We have provided you with an unfinished `Tiger` class below. When completed, this class should contain two instance variables: `name` and `favoriteFood` (both with type `String`).  This class should also contain `eat` and `sleep` methods similar to the functions you wrote in Problems 1 and 2 (you can copy them from the previous page), but they need to be modified slightly.
+ - callout(課題): 未完成の`Tiger`クラスを下に用意しました。完成させると、このクラスは2つのインスタンス変数を持ちます。`name`と`favoriteFood`(共に`String`型) です。 このクラスには問題1と問題2で作成した関数`eat`メソッドと`sleep`メソッドも含まれます (前のページからコピーできます) が、若干修正が必要です。
 
-    Instead of taking a tiger's `name` as an argument, the `sleep` method should use the `name` _instance variable_ when it prints "`<name> sleeps for 8 hours`".  Similarly, the `eat` method should use the `name` _instance variable_, but should take a `food` argument, because a tiger doesn't know what food it's going to eat until a zookeeper feeds it.
+    `"<name>は8時間眠ります"`と出力する際、`sleep`メソッドはトラの`name`を引数として取る代わりに`name`インスタンス変数を使用すべきです。 同様に、`eat`メソッドは`name`インスタンス変数を使用すべきですが、`food引数を取るべきです。トラは動物園の飼育員が餌を与えるまでどんな餌を食べるか知らないからです。
 
-    There's one more method we need to write to complete the `Tiger` class: the _initializer_. This should take a `name` argument and set the tiger's `name` instance variable to the value given. The initializer also sets the `favoriteFood` instance variable to `"meat"` because all tigers like meat. Once finished, we can initialize a new `Tiger` instance and call the `eat` method on it!
+    `Tiger`クラスを完成させるにはもう1つのメソッド、イニシャライザを作成する必要があります。これは`name`引数を取り、トラの`name`インスタンス変数を与えられた値に設定します。また、トラは肉が好きなのでイニシャライザは`favoriteFood`インスタンス変数を「"肉"」に設定します。完了したら、新しい`Tiger`インスタンスを初期化して`eat`メソッドを呼び出します！
 
  */
 
 class Tiger {
-    // put your instance variables here!
+    // ここにインスタンス変数を入力します！
 
 
     init(name: String) {
-        // put your initializer content here
+        // ここにイニシャライザコンテンツを入力します
 
     }
 
     func sleep() {
-        // complete your sleep function here, noting the change from global to instance variables
+        // ここにsleep関数を完成させます。グローバルからインスタンス変数に変わることに注意してください。
 
     }
 
     func eat(food: String) {
-        // complete your eat function here!
+        // ここにeat関数を完成させます。
 
     }
 }
@@ -159,16 +160,16 @@ tigger.eat(food: "meat")
 tigger.eat(food: "kibble")
 
 /*:
- # Testing
+ ## テスト
 
- When you're done, check your output. It should read as follows:
+ 呼び出したら出力をチェックしましょう。次のように出力されるはずです。
 
-    Tigger eats meat
-    YUM!!! Tigger wants more meat
-    Tigger eats kibble
-    Tigger sleeps for 8 hours
+    Tiggerは肉を食べます
+    うまい！！！Tiggerはもっと肉を欲しがっています
+    Tiggerは餌を食べます
+    Tiggerは8時間眠ります
 
- Copy your `Tiger` class so you can use it in the next section.
+ 次のセクションで使用するので`Tiger`クラスをコピーしてください。
 
  */
-//: [Previous](@previous) | [Next](@next)
+//: [前へ](@previous) | [次へ](@next)

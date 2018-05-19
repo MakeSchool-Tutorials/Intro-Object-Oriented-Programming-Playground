@@ -1,37 +1,37 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # Inheritance
+ # 継承
 
- Zoe got promoted AGAIN! She just found out that she's getting assigned three more animals tomorrow: Giraffes, Bees, and... Unicorns! What kind of petting zoo is this, anyways?!
+ Zoeが再び昇進しました！ 明日から、さらに3つの動物が割り当てられるということが分かりました。キリンとミツバチと... ユニコーンです！ なんという動物園なんでしょうか？！
 
- Before Zoe asks you for three new classes tomorrow, let's rewrite our code to save us some time. Create a class called `Animal`, which will act as our _superclass_ (we'll explain this in a moment). `Animal` should contain both instance variables (`name` and `favoriteFood`, in case you need a reminder). The initializer method should take two arguments that sets the value of both `name` and `favoriteFood`. Our `eat` and `sleep` methods should be exactly the same as the `Tiger` class you wrote in Problem 3.
+ Zoeが明日新しいクラスを3つ要求してくる前に、コードを書き直して時間を節約しましょう。`Animal`というクラスを作成します。これはスーパークラス(すぐに説明します) となります。`Animal`は両方のインスタンス変数 (`name`と`favoriteFood`ですね) を含んでいる必要があります。イニシャライザ メソッドは2つの引数を取り、`name`と`favoriteFood`の両方の値を設定します。`eat`メソッドと`sleep`メソッドは、問題3で作成した`Tiger`クラスとまったく同じになるはずです。
 
  */
 class Animal {
-    // Put your instance variables here
+    // ここにインスタンス変数を入力します。
 
     init(name: String, favoriteFood: String) {
-        // put your initializer content here
+        // ここにイニシャライザコンテンツを入力します。
 
     }
 
     func sleep() {
-        // complete your sleep function here, noting the change from global to instance variables
+        // ここにsleep関数を完成させます。グローバルからインスタンス変数に変わることに注意してください。
 
     }
 
     func eat(food: String) {
-        // complete your eat function here!
+        // ここにeat関数を完成させます。
 
     }
 }
 /*:
 
- You might be wondering how this `Animal` class is going to save us any time? After all, we're going to have to write three more classes for Giraffe, Bee, and Unicorn, right?
+ この`Animal`クラスがどう時間の節約になるのかと思っているのではないですか？ 結局、キリン、ミツバチ、ユニコーン用に3つのクラスを作らなければならないということですよね？
 
- Yes – but you might have noticed that all of the animals we've wrote classes for have a few similarities. For one, all animals seem to have a `name` and a `favoriteFood`. They also all seem to have `eat` and `sleep` functions, even though the specific behaviors of the functions might be different. What if we could put together all the similar parts of all animals into one _superclass_, and then write just the unique parts for each animal in its own _subclass_?
+ その通りではありますが、クラスを作成した動物すべてに、いくつか共通の点があるのにお気づきかもしれません。例えば、どの動物にも`name`があり、`favoriteFood`があります。また、関数の具体的な動作は違うかもしれませんが、それぞれに`eat`関数と`sleep`関数が用意されているようです。すべての動物の似ている部分をすべて1つのスーパークラスにまとめて、各動物に特有の部分をその動物のサブクラスに作成したらどうでしょうか？
 
- This is the problem that _class inheritance_ in Swift solves for us. A class can actually _inherit_ (or borrow behavior) from another class, like so:
+ これはSwiftのクラスの継承で解決できます。実のところ、クラスは別のクラスから継承(または動作を借用) できます。
 
  */
 class ExampleSuperclass {
@@ -42,11 +42,11 @@ class ExampleSuperclass {
     }
 
     func doStuff() {
-        print("My message is '\(self.message)'.")
+        print("私のメッセージは '\(self.message)'.")
     }
 
     func sayGoodbye() {
-        print("Goodbye!")
+        print("さようなら!")
     }
 }
 
@@ -54,40 +54,29 @@ class ExampleSubclass: ExampleSuperclass {
     var mySecretMessage: String
 
     override init(message: String) {
-        self.mySecretMessage = "Hi! I am a subclass of ExampleSuperclass! :D"
+        self.mySecretMessage = "こんにちは！私はExampleSuperclassのサブクラスです！:D"
         super.init(message: message)
     }
 
     override func doStuff() {
         super.doStuff()
-        print("My secret message is '\(self.mySecretMessage)'!")
+        print("私の秘密のメッセージは '\(self.mySecretMessage)'!")
     }
 }
 /*:
 
- There's a few different things going on here. First, the subclass definition: `class ExampleSubclass: ExampleSuperclass` – this sets up the inheritance, letting `ExampleSubclass` _inherit_ all the instance variables and methods of `ExampleSuperclass`, getting access to it all. So in this example, `ExampleSubclass` has access to not only its instance variable `secretMessage`, but also `message` from its superclass.
+ ここでは様々な事がいくつか起きています。最初はサブクラスの定義です。`class ExampleSubclass: ExampleSuperclass`で継承を行います。`ExampleSubclass`は、`ExampleSuperclass`のすべてのインスタンス変数とメソッドを継承してアクセスできるようになります。この例では、`ExampleSubclass`はインスタンス変数`secretMessage`だけでなく、スーパークラスの`message`にもアクセスできます。
 
  */
-let superclassInstance = ExampleSuperclass(message: "Hello Make School student.")
-let subclassInstance = ExampleSubclass(message: "Hi there Make School student. Want to hear a secret?")
+let superclassInstance = ExampleSuperclass(message: "やあ、Make Schoolの受講生さん。")
+let subclassInstance = ExampleSubclass(message: "やあ、Make School受講生さん。秘密を聞きたいかい？")
 /*:
 
- Next: the `super.init()` call in `ExampleSubclass`'s initializer! The `super` keyword will go up one step in the inheritance tree, letting `ExampleSubclass` access methods written for `ExampleSuperclass`. Here, the superclass initializer is called, setting `message` to `"Hi there Make School student. Want to hear a secret?"`.
+ 次は`ExampleSubclass`のイニシャライザの`super.init()`の呼び出しです！ `super`キーワードは継承ツリーを1つ上り、`ExampleSubclass`が`ExampleSuperclass`用に作成されたメソッドにアクセスできるようにしています。ここでスーパークラス イニシャライザを呼び出して、`message`に`"やあ、Make School受講生さん。秘密を聞きたいかい？"」と設定します。
 
- Lastly: the `override` keyword. As the name suggests, this lets you _override_ (or redefine) a method in the superclass of the same name. In this case, `ExampleSuperclass`'s `doStuff()` method prints out `message`'s value. `ExampleSubclass` augments this behavior by printing out the value of `mySecretMessage`, _as well as_ executing `ExampleSuperclass`'s default behavior, by calling `super.doStuff()`. Overriding an initializer similarly takes over the initializer of the superclass – but in this case, you are required to call `super.init()` at some point in the init function.
+ 最後に`override`キーワードです。名前が示す通り、これは同名のスーパークラスのメソッドをオーバーライド(再定義) できます。この場合、`ExampleSuperclass`の`doStuff()`メソッドは`message`の値を出力します。`ExampleSubclass`は`mySecretMessage`の値を出力し、また`super.doStuff()`を呼び出して、`ExampleSuperclass`の既定の動作を実行し、この動作を強化します。イニシャライザをオーバーライドすると、スーパークラスのイニシャライザを同様に継承しますが、この場合はinit関数のどこかで`super.init()`を呼び出す必要があります。
 
- - callout(Try it out!): Add calls to the `doStuff` function on both `superclassInstance` and `subclassInstance` in the space below. What do you expect them to output?
-
- */
-
-
-
-
-/*:
-
- That was pretty cool. Let's try something else...
-
- - callout(Try it out!): Add a call to the `sayGoodbye` function on `superclassInstance`. Do you think you can call `sayGoodbye` on `subclassInstance as well? Will they output the same thing? Give it a shot below!
+ - callout(試してみましょう！): `doStuff`関数の呼び出しを、下の欄にある`superclassInstance`と`subclassInstance`の両方に追加しましょう。何が出力されると思いますか？
 
  */
 
@@ -96,62 +85,73 @@ let subclassInstance = ExampleSubclass(message: "Hi there Make School student. W
 
 /*:
 
- - important: `subclassInstance` can use `sayGoodbye` because it borrowed all the methods from `ExampleSuperclass` when `ExampleSubclass` inherited from it!
+ 素晴らしいですね。他の事も試してみましょう。
 
- # Back to the animals
-
- Now, let's implement these new ideas for our animals! Modify your `Bear` and `Tiger` classes so that they are subclasses of `Animal`. `Tiger` should inherit fully from the `Animal` class. This means that `Tiger` will automatically contain the `eat` and `sleep` methods defined in `Animal`. To complete the `Tiger` class, all you need to write is an initializer method that takes a name argument and passes it off to the `Animal` initializer, along with a `favoriteFood` of `"meat"`, because remember: all tigers like meat. :-)
-
- - callout(Hint): Don't forget to use the `super` keyword like in `ExampleSubclass`!
-
- The `Bear` class should also inherit from the `Animal` class and have a similar initializer to the `Tiger` class, except that it should use a value  of `"fish"` for `favoriteFood` because all bears like fish. However, to capture bears' different sleeping behavior, you'll need to __override__ the `sleep` method so that it prints the correct message (refer to Problem 4 if you need a reminder what the `sleep` method should print).
+ - callout(試してみましょう！): `sayGoodbye`関数の呼び出しを`superclassInstance`に追加しましょう。`subclassInstance`でも`sayGoodbye`を呼び出せると思いますか?出力は同じになるでしょうか？ 下で試してみましょう？
 
  */
 
-// Complete the Tiger and Bear subclasses below
+
+
+
+/*:
+
+ - important:`subclassInstance`は`sayGoodbye`を使用できます。`ExampleSubclass`は`ExampleSuperclass`を継承することで、`ExampleSuperclass`のすべてのメソッドを借用するからです！
+
+ # 動物に戻る
+
+ これらの新しいアイデアを動物に実装してみましょう!`Bear`クラスと`Tiger`クラスを`Animal`のサブクラスとなるように修正しましょう。`Tiger`は`Animal`クラスを完全に継承します。つまり、`Tiger`は自動的に`Animal`で定義されている`eat`メソッドと`sleep`メソッドを含むことになります。`Tiger`クラスを完成させるには、name引数を取り、`Animal`イニシャライザに`favoriteFood`の`"肉"`と一緒に渡すイニシャライザ メソッドを作成するだけです。トラは肉食ですからね。:-)
+
+ - callout(ヒント): ExampleSubclass`のように`super`キーワードを使用するのを忘れずに！
+
+ `Bear`クラスも`Animal`クラスを継承し、`Tiger`クラスと同様のイニシャライザを持つようにします。ただし、クマは魚が好きなので`favoriteFood`の値は「"魚"」を使用します。ただし、クマ独特の睡眠行動を記録するために、`sleep`メソッドをオーバーライドして正しいメッセージを出力する必要があります (`sleep`メソッドの出力内容を確認する必要がある場合は問題4を参照してください)。
+
+ */
+
+// 下にTigerとBearのサブクラスを完成させてください。
 class Tiger: Animal {
 
     init(name: String) {
-        // don't forget to correct the call to the superclass initializer!
+        // superclassのイニシャライザへの呼び出しの修正を忘れないでください！
         super.init(name: "", favoriteFood: "")
     }
 
 }
 
 class Bear: Animal {
-    // complete the Bear class here, using the completed Tiger class as an example
+    // ここにBearクラスを完成させてください。例としては完成したTigerクラスを使用します。
 
 
-    // here, we override the sleep function
+    // ここでsleep関数をオーバーライドします。
     override func sleep() {
-        // add in your Bear-specific sleep code here
+        // ここにBear-specific sleepコードを追加します。
 
     }
 }
 
 /*:
 
- - callout(Hint): Don't forget to implement `Bear`'s _initializer_!
+ - callout(ヒント): `Bear`のイニシャライザの実装を忘れずに！
 
- These `Tiger` and `Bear` classes that now inherit from the `Animal` class should have exactly the same behavior as they did in Problem 4. However, you should notice that your code is shorter overall. This is one advantage of using inheritance in object-oriented programming.
+ この`Tiger`クラスと`Bear`クラスは`Animal`クラスを継承したので、問題4とまったく同じ動作をするはずです。それでもコードは全体的に短くなっているのに気づくと思います。これはオブジェクト指向プログラミングで継承を使う利点の1つです。
 
- ## Testing
+ ## テスト
 
- When you're done, uncomment the below lines of code, and it should compile and output the same thing as before:
+ 完了したら、下のコード行のコメントを外してコンパイルすると、以前と同じ内容が出力されるはずです。
 
-     Tigger eats meat
-     YUM!!! Tigger wants more meat
-     Pooh eats fish
-     YUM!!! Pooh wants more fish
-     Pooh eats meat
-     Pooh hibernates for 4 months
+     Tiggerは肉を食べます
+     うまい！！！ Tiggerはもっと肉を欲しがっています
+     Poohは魚を食べます
+     うまい！！！ Poohはもっと魚を欲しがっています
+     Poohは肉を食べます
+     Poohは4カ月冬眠します
 
  */
 
 //let tigger = Tiger(name: "Tigger")
-//tigger.eat(food: "meat")
+//tigger.eat(food: "肉")
 //let pooh = Bear(name: "Pooh")
-//pooh.eat(food: "fish")
-//pooh.eat(food: "meat")
+//pooh.eat(food: "魚")
+//pooh.eat(food: "肉")
 
-//: [Previous](@previous) | [Next](@next)
+//: [前へ](@previous) | [次へ](@next)

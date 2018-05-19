@@ -1,32 +1,32 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # Favorite Foods
+ # 好きな食べ物
 
- Great! Now, you'll write another function and use an if-statement. We'll also use a variable to keep track of a `Tiger`'s favorite food. The variable is named `favoriteFood` and is already set up for you in the starter code below.
+ 素晴らしい！ ifステートメントを使ってもう1つ関数を作成しましょう。`Tiger`の好物を記録する変数も使用します。変数は`favoriteFood`という名前で、下のスターターコードに既に用意されています。
 
- - important: We refer to the `favoriteFood` variable as being a "global" variable, since it is in the _outermost scope_ of the program – as opposed to it being inside a function or another statement that has curly braces. If the variable was defined inside a function, we would say it's "in the function's scope". If it was declared inside an if-statement, it would be "in the if-statement's scope". Furthermore, if it was inside a class, it's "in the class' scope." We'll talk more about that last one later.
+ - important: `favoriteFood`変数は、関数や波括弧を持つ別のステートメントの中ではなく、プログラムの一番外側のスコープにあるため、「グローバル」変数と呼びます。変数が関数内で定義されていた場合は、「関数のスコープ内」にあると言います。ifステートメント内で宣言された場合は、「ifステートメントのスコープ内」となります。さらに、クラス内だった場合は「クラスのスコープ内」となります。最後のものについては後で取り上げます。
 
-    A variable is only available to code within it's scope and will be removed (deallocated) once the scope ends. So for instance, if you declare a variable within a function, it is deleted when you exit that function. If you declare a variable in the global scope, it exists forever.
+    変数はそのスコープ内のコードでのみ使用でき、スコープが終了すると削除 (割り当てを解除) されます。例えば、関数内で変数を宣言すると、関数から出た時点で削除されます。変数をグローバル スコープで宣言すると、永久に存在します。
 
- - callout(Challenge): Write a function named `eat` that takes two arguments: `name` and `food`. This function should print "`<name> eats <food>`" each time it's called.
+ - callout(課題): `eat`という名前で`name`と`food`の2つの引数を持つ関数を作成してください。この関数は呼び出されるたびに`<name>は<food>を食べます`と出力します。
 
-    But wait – there's more! The `eat` function should check if the food argument is equal to the global variable `favoriteFood`. If the values are equal, the function should then also print "`YUM!!! <name> wants more <food>`". _If they are not equal, the eat function should call the sleep function you wrote in Problem 1 (you can copy it from the previous page) and pass the value of `name` as an argument to sleep._
+    それだけではありません!`eat`関数は引数のfoodがグローバル変数`favoriteFood`と同じ値かどうかをチェックします。値が同じである場合は`うまい！！！ <name>はもっと<food>を欲しがっています`と出力します。_値が同じではない場合は、eat関数は問題1で作成したsleep関数を呼び出し(前のページからコピーできます)、`name`の値を引数としてsleepに渡します。_
 
- This function call:
+ 次の関数の呼び出し:
 
-     eat(name: "Tigger", food: "meat")
-     eat(name: "Tigger", food: "kibble")
+     eat(name: "Tigger", food: "肉")
+     eat(name: "Tigger", food: "餌")
 
- should print this output exactly:
+ これは、次を出力します。
 
-    Tigger eats meat
-    YUM!!! Tigger wants more meat
-    Tigger eats kibble
-    Tigger sleeps for 8 hours
+    Tiggerは肉を食べます
+    うまい！！！ Tiggerはもっと肉を欲しがっています
+    Tiggerは餌を食べます
+    Tiggerは8時間眠ります
 
  */
 
-let favoriteFood = "meat"
+let favoriteFood = "肉"
 
 func sleep(name: String) {
 
@@ -36,7 +36,7 @@ func eat(name: String, food: String) {
 
 }
 
-eat(name: "Tigger", food: "meat")
-eat(name: "Tigger", food: "kibble")
+eat(name: "Tigger", food: "肉")
+eat(name: "Tigger", food: "餌")
 
-//: [Previous](@previous) | [Next](@next)
+//: [前へ](@previous) | [次へ](@next)

@@ -1,55 +1,55 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # A wild bear appears!
+ # 野生のクマが現れます！
 
- Zoe says your program is really helping her keep track of the tigers! As a result, Zoe has been promoted at the zoo. She's now in charge of tigers and bears, which means your program now needs to describe bear behaviors as well!
+ Zoeは、あなたのプログラムがトラを追跡管理するのにとても役立っていると言っています!その結果、Zoeは動物園で昇進しました。彼女はトラとクマの担当になりました。プログラムにクマの行動も組み入れなければなりません！
 
- - callout(Challenge): Create a class called `Bear`, which should be very similar to your `Tiger` class. The `Bear` class should also have `name` and `favoriteFood` instance variables, because `Bear`s have a `name` and a `favoriteFood`, just like `Tiger`s. The initializer method should take one argument, `name`, and set the `name` instance variable to its given value, and `favoriteFood` to `"fish"`.  The `eat` method for the `Bear` class should also be exactly the same as in the `Tiger` class. Remember, if `eat` is called with anything other than their `favoriteFood` then it will sleep!  _`Bear`s sleep very differently than `Tiger`s, so the `sleep` method for the `Bear` class should instead print `"<name> hibernates for 4 months"` instead to reflect the difference in their sleeping behavior._
+ - callout(課題): `Bear`という`Tiger`クラスとよく似たクラスを作成します。`Bear`クラスも`name`と`favoriteFood`というインスタンス変数を持ちます。`Bear`には`Tiger`と同じように`name`と`favoriteFood`があるからです。イニシャライザ メソッドの引数は`name`が1つで、`name`インスタンス変数を所定の値に、`favoriteFood`を`"fish"`に設定します。 `Bear`クラスの`eat`メソッドも`Tiger`クラスとまったく同じはずです。`eat`が`favoriteFood`以外の引数で呼び出されると眠ってしまうことを思い出してください！  `Bear`の睡眠は「Tiger」とは大きく異なります。`Bear`クラスの`sleep`メソッドは睡眠行動の違いを反映して`"<name> hibernates for 4 months"`と出力するようにします。
 
- Finally, create `Tiger` and `Bear` objects, and then call their `eat` method to test its behavior.
+ 最後に、`Tiger`オブジェクトと`Bear`オブジェクトを作成し、`eat`メソッドを呼び出して動作を検証してください。
 
  */
 
 class Tiger {
-    // copy your Tiger class from the previous section!
+    // ひとつ前のセクションからTigerクラスをコピーしてください！
 
 }
 
 class Bear {
-    // complete the Bear class here!
+    // ここにBearクラスを完成させてください
 
 }
 
 
 
 /*:
- ## Testing
+ ## テスト
 
- When you're done, uncomment the below lines of code, and it should output the following:
+ 終了したら、下のコード行のコメントを外してください。次のように出力されるはずです。
 
-    Tigger eats meat
-    YUM!!! Tigger wants more meat
-    Tigger eats kibble
-    Tigger sleeps for 8 hours
-    Pooh eats fish
-    YUM!!! Pooh wants more fish
-    Pooh eats meat
-    Pooh hibernates for 4 months
+    Tiggerは肉を食べます
+    うまい！！！ Tiggerはもっと肉を欲しがっています
+    Tiggerは餌を食べます
+    Tiggerは8時間眠ります
+    Poohは魚を食べます
+    うまい！！！ Poohはもっと魚を欲しがっています
+    Poohは肉を食べます
+    Poohは4カ月冬眠します
 
- - callout(Hint): Refer to the previous page if you need any help!
+ - callout(ヒント): ヘルプが必要な場合は前のページを参考にしてください！
 
  */
 
 //let tigger = Tiger(name: "Tigger")
-//tigger.eat(food: "meat")
-//tigger.eat(food: "kibble")
+//tigger.eat(food: "肉")
+//tigger.eat(food: "餌")
 //let pooh = Bear(name: "Pooh")
-//pooh.eat(food: "fish")
-//pooh.eat(food: "meat")
+//pooh.eat(food: "魚")
+//pooh.eat(food: "肉")
 
 
 
 
 
 
-//: [Previous](@previous) | [Next](@next)
+//: [前へ](@previous) | [次へ](@next)

@@ -1,33 +1,33 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # Object-Oriented Programming: An Introduction
+ # オブジェクト指向プログラミング: はじめに
  
- In this tutorial, we're going to learn about _Object-Oriented Programming_ in Swift. What is that? It's a _programming paradigm_ based on the concept of "objects" – things that contain data, and methods that perform operations on those data.
+ このチュートリアルでは、Swiftのオブジェクト指向プログラミングについて学びます。オブジェクト指向プログラミングとは何でしょうか？ データを格納する「オブジェクト」という概念と、これらのデータに対する演算を実行するメソッドに基づいたプログラミング パラダイムです。
  
- That sounds pretty vague. But worry not! We will start what we already know in Swift – namely, functions, variables, etc. – and build our object-oriented program from there. We've been hinting at it throughout the course -- it's time to dive right in!
+ かなり漠然としていますね。でもご心配なく！Swiftについて既に知っていること、つまり関数や変数などから始めて、そこからオブジェクト指向プログラムを作っていきます。コースを通じて触れてきましたが、ようやく取り組む時が来ました！
  
- - callout(Challenge): First, write a function named `sleep` that takes an argument `name`. This function should print "`<name> sleeps for 8 hours`" each time it's called. Be sure to print this exact format.
+ - callout(課題): 最初に`name`という引数を持つ`sleep`という関数を作成します。この関数は呼び出されるたびに`<name>は8時間眠ります`と出力します。必ずこの通りの書式で出力するようにしてください。
  
- This function call:
+ 次の関数の呼び出し:
  
      sleep(name: "Tigger")
  
- should print this output exactly:
+ これは、次を出力します。
  
-     Tigger sleeps for 8 hours
+     Tiggerは8時間眠ります
  
- To check your code, you can bring up the console by pressing `command+shift+y`. Your output should get printed there!
+ コードをチェックするには、`command+shift+y`を押すとコンソールが表示されます。そちらに出力されます！
  
  */
 
 func sleep(name: String) {
-    
+
 }
 
 sleep(name: "Tigger")
 
 /*:
- - note: When you're done, copy the contents of your completed sleep function, so we can bring it over to the next section.
+ - note: 作業が済んだら、完成したsleep関数の中身をコピーして次のセクションに進みましょう。
  */
 
-//: [Next](@next)
+//: [次へ](@next)

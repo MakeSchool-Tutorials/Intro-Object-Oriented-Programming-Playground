@@ -1,12 +1,12 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # Type Properties
+ # タイプのプロパティ
  
- Sometimes the zookeepers are getting confused about how many animals they're feeding and how many total animals are at the zoo. Just yesterday, Zeb the zookeeper said to ZoeBot, "Was I supposed to feed 3 bears and 5 bees, or 3 of the 5 bears?" Let's help them remember.
+ 動物園の飼育員には、餌を与える動物の頭数や動物園にいる動物の数が分からなくなることがあります。昨日飼育員のZebはZoeBotにこう尋ねました。「3匹のクマと5匹のミツバチに餌を与えるんだっけ？　それとも5匹いるクマの内の3匹だっけ？」 飼育員が思い出せるように手伝ってあげましょう。
  
- To do this, we would like to add in a `population` counter in our `Animal` class, which keeps track of how many times an `Animal` has been instantiated. But this seems impossible, given what we know – all instance variables are unique to the _instance_ of the class, which means that such a variable wouldn't be able to count _across_ instances of a class...
+ これには、`Animal`クラスに`population`カウンターを追加して`Animal`のインスタンスの作成回数をカウントします。ですが、わかっている限りでは、どうも不可能なように見えます。インスタンス変数は該当するクラスのインスタンスに対して一意であり、クラスのインスタンス全体で変数を数えるのは不可能だからです。
  
- Enter _type_ properties!
+ 型のプロパティを入力しましょう！
  
  */
 class AnotherExampleClass {
@@ -24,58 +24,58 @@ class AnotherExampleClass {
 }
 /*:
  
- In this example, we have an instance variable `message`, and a _static_ property `counter`, initialized to `8999`. After each call of `increaseAndCheckTheCounter()`, the type variable is incremented, and is printed, along with the `message` instance variable. Note that difference in the syntax as well: `message` is accessed from within the class as `self.message`, while `counter` is accessed as `AnotherExampleClass.counter`, signifying that the variable `counter` is _shared_ across the entire type `AnotherExampleClass`.
+  この例では、インスタンス変数`message`と`8999`に初期化された静的プロパティの`counter`があります。`increaseAndCheckTheCounter()`を呼び出すたびに型変数が増え、`message`インスタンス変数と一緒に出力されます。構文の違いにも注意してください。`message`はクラス内から`self.message`とアクセスするのに対して、`counter`は`AnotherExampleClass.counter`とアクセスします。変数`counter`は型`AnotherExampleClass`全体で共有されます。
  
- The code below prints the following result. Can you explain why?
+ 下のコードは次の結果を出力します。理由を説明できますか？
  
-     What does your counter say? 9000!
-     That can't be! It says it's... 9001!
+     カウンターはいくつですか？ 9000！
+     あり得ない！ カウンターは ... 9001！
  
  */
-let instanceOne = AnotherExampleClass(message: "What does your counter say?")
-let instanceTwo = AnotherExampleClass(message: "That can't be! It says... it's...")
+let instanceOne = AnotherExampleClass(message: "カウンターはいくつですか？")
+let instanceTwo = AnotherExampleClass(message: "あり得ない！ カウンターは ...")"
 instanceOne.increaseAndCheckTheCounter()
 instanceTwo.increaseAndCheckTheCounter()
 /*:
  
- # Type methods
+ # 型メソッド
  
- Methods can be marked as `static`, too. For example, if we subclassed `AnotherExampleClass` to create `CrushingExampleClass` and decided to add a method `crushTheCounter` to `CrushingExampleClass`, you would call it as: `CrushingExampleClass.crushTheCounter()`. You won't be able to access any instance variables from within a type method, though – this is because a type method is not tied to any given instance of the class.
+  メソッドも`static`とマークできます。例えば、`AnotherExampleClass`をサブクラス化して`CrushingExampleClass`を作成し、`crushTheCounter`メソッドを`CrushingExampleClass`に追加する場合は`CrushingExampleClass.crushTheCounter()`と呼び出します。しかし、タイプメソッド内からインスタンス変数にアクセスできません。タイプメソッドはクラスのどのインスタンスにも紐づけられていないからです。
  
- - callout(Try it out!): Add a call to `instanceThree.increaseAndCheckTheCounter()` and `CrushingExampleClass.crushTheCounter()` below to see it in action!
+ - callout（試してみましょう): `instanceThree.increaseAndCheckTheCounter()`と`CrushingExampleClass.crushTheCounter()`の呼び出しを下に追加してどうなるか見てみましょう!
 
  
  */
 class CrushingExampleClass: AnotherExampleClass {
     static func crushTheCounter() {
         CrushingExampleClass.counter = 0
-        print("Don't worry... *crush* the counter reads \(CrushingExampleClass.counter) now!")
+        print("ご心配なく... 今*crush*のカウンターは \(CrushingExampleClass.counter) となっています！")
     }
 }
-let instanceThree = CrushingExampleClass(message: "WHAT! NO! It's now...")
+let instanceThree = CrushingExampleClass(message: "何ですって！いえ！今は...")
 
 
 /*:
  
- - note: You can actually use the keyword `class` in place of `static` _when writing type methods_. The difference is minute – a method marked with `class` allows one to _override_ the method implementation in a subclass, while a method marked with `static` does not allow this. 
+ - note: タイプメソッドを作成する際、`static`の代わりにキーワード`class`を使用できます。違いはわずかです。`class`が付いているメソッドは、サブクラスのメソッド実装をオーバーライドできますが、`static`が付いているメソッドはできません。
  
- You can read more about this at Apple's Swift documentation [here](http://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Methods.html).
+ これについては、AppleのSwiftドキュメント [こちら](http://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Methods.html) でもっと読むことができます。
  
- # Back to the animals
+ # 動物に戻る
  
- Now that you know how to use type properties, let's use them to count our `Animal` population.
+ タイププロパティの使い方が分かったので、このプロパティを使って`Animal`の数を数えましょう。
  
- - callout(Challenge): Implement the new features on the Animal superclass below!
-    - Add a type property `population` to the `Animal` class that counts how many instances of Animal have been created. Keeping track of this will require incrementing the count in the initializer method each time a new `Animal` object is initialized.
-    - To make the count accessible, add a type method `populationCount` that simply returns the value of population.
-    - Show the total Animal population whenever you call `feedAnimals`. Add a line to the top of the `Zookeeper.feedAnimals` method to print `"<name> is feeding <food> to <number of animals feeding> of <population> total animals"`.
+ - callout(課題): 新しい機能を下のAnimal スーパークラスに実装します！
+    - 作成されたAnimalのインスタンス数を数えるタイププロパティの`population`を`Animal`クラスに追加します。これを追跡するには、新しい`Animal`オブジェクトが初期化されるたびにイニシャライザ メソッドのカウントを増やす必要があります。
+    - カウントにアクセスできるようにするには、valueToReturnを返すタイプメソッド`populationCount`を追加します。
+    - `feedAnimals`を呼び出すと動物の総数が表示されます。`Zookeeper.feedAnimals`メソッドの冒頭に行を追加して、`"<name>は<food>を<number of animals feeding>匹の動物に与えており、動物の合計は<population>匹です"`と出力します。
  
  */
 
-// Copy your Animal class here and modify it to automatically count population
-// Hint: Modify the initializer method to count the number of animals created
+// ここにAnimalクラスをコピーして、自動的に総数をカウントするように修正してください。
+// ヒント: 作成された動物をカウントするためにイニシャライザメソッドを修正してください。
 class Animal {
-    // here, make yourself a new type variable!
+    // ここに新しい型の変数を自分で作ってください！
     
     init(name: String) {
         
@@ -90,58 +90,58 @@ class Animal {
     }
 }
 
-// Copy your Tiger class here
+// ここにTigerクラスをコピーしてください。
 class Tiger: Animal {
     
 }
 
-// Copy your Bear class here
+// ここにBearクラスをコピーしてください。
 class Bear: Animal {
     
 }
 
-// Copy your Unicorn class here
+// ここにUnicornクラスをコピーしてください。
 class Unicorn: Animal {
     
 }
 
-// Copy your Giraffe class here
+// ここにGiraffeクラスをコピーしてください。
 class Giraffe: Animal {
     
 }
 
-// Copy your Bee class here
+// ここにBeeクラスをコピーしてください。
 class Bee: Animal {
     
 }
 
-// Copy your Zookeeper class here
+// ここにZookeeperクラスをコピーしてください。
 class Zookeeper {
     init(name: String) {
-        // complete your init function
+        // init関数を完成させてください。
     }
     
     func feed(animals: [Animal], food: String) {
-        // complete your feedAnimals function here.
+        // ここにfeedAnimals関数を完成させてください。
         
     }
 }
 
 
 /*:
- ## Testing
+ ## テスト
  
- The following code is similar to the last one, except we add some more animals to our population, that aren't part of the array of animals getting fed. You should get the following output:
+ 以下のコードは前回のコードに似ていますが、動物が追加されていて、これらの動物は餌が与えられる動物の配列には入っていません。次のように出力されます。
  
-     Zoe is feeding meat to 5 of 10 total animals
-     Tigger eats meat
-     YUM!!! Tigger wants more meat
-     Pooh eats meat
-     Pooh hibernates for 4 months
-     Rarity eats meat
-     Rarity sleeps in a cloud
-     YUCK!!! Gemma will not eat meat
-     YUCK!!! Stinger will not eat meat
+     Zoeは肉を5匹の動物に与えており、動物の合計は10匹です
+     Tiggerは肉を食べます
+     うまい！！！ Tiggerはもっと肉を欲しがっています
+     Poohは肉を食べます
+     Poohは4カ月冬眠します
+     Rarityは肉を食べます
+     Rarityは雲の中で眠ります
+     まずい！！！ Gemmaは肉を食べません
+     まずい！！！ Stingerは肉を食べません
  
  */
 
@@ -152,25 +152,25 @@ let animals: [Animal] = [
     Giraffe(name: "Gemma"),
     Bee(name: "Stinger")
 ]
-let unfedTiger = Tiger(name: "full Tiger")
-let unfedBear = Bear(name: "full Bear")
-let unfedUnicorn = Unicorn(name: "full Unicorn")
-let unfedGiraffe = Giraffe(name: "full Giraffe")
-let unfedBee = Bee(name: "full bee")
+let unfedTiger = Tiger(name: "満腹のTiger")
+let unfedBear = Bear(name: "満腹のBear")
+let unfedUnicorn = Unicorn(name: "満腹のUnicorn")
+let unfedGiraffe = Giraffe(name: "満腹のGiraffe")
+let unfedBee = Bee(name: "満腹のbee")
 
 let zookeeper = Zookeeper(name: "Zoe")
-zookeeper.feed(animals: animals, food: "meat")
+zookeeper.feed(animals: animals, food: "肉")
 
 /*:
- ## Conclusion
+ ## 結論
  
- Congratulations! In this tutorial you learned about the basic principles of Object-Oriented Programming – namely:
+ おめでとうございます！ このチュートリアルでは、オブジェクト指向プログラミングに関する次の基本原則について学習しました。
  
- - how to leverage the abstraction of classes in order to organize data
- - how to use class inheritance in order to make use of overlapping or similar behaviors
- - the difference between type and instance variables and methods
+ - データの整理にクラスの抽象化を活用する方法
+ - オーバーラッピングや類似の動作を利用するためにクラス継承を使う方法
+ - 型変数とインスタンス変数とメソッドの違い
  
- Object-Oriented Programming is the basis of many complex programs. You'll be using these abstractions as core principles as you delve into many of your programming projects.
+ オブジェクト指向プログラミングは多くの複雑なプログラムの基本です。多くプログラミング プロジェクトに取り組んでいく中で、これらの抽象化を基本原則として使用していきます。
  
  */
-//: [Previous](@previous)
+//: [前へ](@previous)

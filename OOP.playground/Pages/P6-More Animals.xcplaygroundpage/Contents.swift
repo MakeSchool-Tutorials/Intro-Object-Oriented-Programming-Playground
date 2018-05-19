@@ -1,19 +1,18 @@
 /*:
  ![Make School Banner](./swift_banner.png)
- # Even more animals!
+ # さらに動物たち！
 
- Today is the day! Zoe now keeps track of giraffes, bees, AND unicorns, so she needs 3 more classes of animals added to the program. Luckily, we're prepared because we have a general Animal class with typical animal behaviors.
+ 今日がその日です！ Zoeはキリン、ミツバチ、ユニコーンを追跡しているので、さらに3つのクラスをプログラムに追加する必要があります。幸運にも準備ができています。一般的な動物の動作を持つ一般的なAnimalクラスがあるからです。
 
- - note: Copy your full `Animal`, `Tiger`, and `Bear` classes from the previous page
+ - note: 前のページの`Animal`クラス、`Tiger`クラス、`Bear`クラスをコピーします。
 
  */
 
-// Copy your Animal class here
+// ここにAnimalクラスをコピーしてください。
 class Animal {
 
     init(name: String, favoriteFood: String) {
-        // put your initializer content here
-
+        // ここにイニシャライザコンテンツを入力してください。
     }
 
     func eat(food: String) {
@@ -25,36 +24,36 @@ class Animal {
     }
 }
 
-// Copy your Tiger class here
+// ここにTigerクラスをコピーしてください。
 class Tiger: Animal {
 
 }
 
-// Copy your Bear class here
+// ここにBearクラスをコピーしてください。
 class Bear: Animal {
 
 }
 
 /*:
 
- # Unicorns
+ #ユニコーンです
 
- We're going to create 3 more subclasses of `Animal`: `Bee`, `Giraffe`, and `Unicorn`. Each class should set their own value for `favoriteFood`, and should override the `sleep` or `eat` methods, or both as appropiate.
+ `Bee`、`Giraffe`、`Unicorn`という、`Animal`に属するサブクラスを3つ作成します。各クラスは`favoriteFood`の独自の値を設定し、`sleep`メソッドや`eat`メソッドを適宜オーバーライドします。
 
- - callout(Challenge): Implement the `Unicorn` class as a subclass of `Animal`. In case you didn't know, unicorns love to eat marshmallows and they sleep in clouds. In other words, their `favoriteFood` is `"marshmallows"` and calling the `sleep` method on a `Unicorn` should print `"<name> sleeps in a cloud"`. We've given you some hints in the provided code below.
+ - callout(課題): `Unicorn`クラスを`Animal`のサブクラスとして実装します。知らない人のために教えると、ユニコーンはマシュマロが好物で、雲の中で眠ります。つまり、`favoriteFood`は`"マシュマロ"`で、`sleep`メソッドを`Unicorn`で呼び出すと、`"<name>は雲の中で眠ります"`が出力されます。下のコードでいくつかヒントを提供しています。
  */
 
-// Implement the Unicorn class here as a subclass of Animal
-// Hint: Implement the initializer method and override the sleep method
+// ここにAnimalのサブクラスとしてUnicornクラスを実装してください。
+// ヒント: イニシャライザメソッドを実装し、sleepメソッドをオーバーライドします。
 class Unicorn: Animal {
 
     init(name: String) {
-        // don't forget to correct the call to the superclass initializer!
+        // superclassのイニシャライザへの呼び出しの修正を忘れないでください！
         super.init(name: "", favoriteFood: "")
     }
 
     override func sleep() {
-        // your overridden sleep code...
+        // sleepコードのオーバーライド...
 
     }
 }
@@ -63,22 +62,22 @@ class Unicorn: Animal {
 
  # Giraffes
 
- - callout(Challenge): Implement the `Giraffe` class as a subclass of `Animal`. Giraffes are vegetarian, so they only eat leaves. If you feed `"leaves"` to a `Giraffe`, they will happily tell you `"YUM!!! <name> wants more leaves"` after eating them (just like how `Tiger`s respond to `"meat"`) _and then `sleep`_. However, if you feed them anything else, they will shout `"YUCK!!! <name> will not eat <food>"` to let you know they don't like what you fed them. You'll need to override the `eat` method for the Giraffe class to model this behavior. In some cases, you might be able to call the superclass's implementation of the `eat` method to avoid having to recode the parts of this behavior that's similar to your generic `Animal` class.
+ - callout(課題): `Giraffe`クラスを`Animal`のサブクラスとして実装します。キリンは草食なので葉しか食べません。`"葉"`を`Giraffe`に与えると、食べた後に`"おいしい！！！ <name>はもっと葉を欲しがっています"」と言い (`Tiger`の`"肉"`への反応と同じように)、それから`sleep`します。ただし、他の餌を与えると、`"まずい！！！ <name>は<food>を食べません"`と叫んで、それが嫌いなことを知らせます。Giraffe クラスの`eat`メソッドをオーバーライドしてこの動作をモデル化する必要があります。スーパークラスの`eat`メソッドの実装を呼び出して、汎用`Animal`クラスと似ているこの動作の一部のコードを作り直さずに済ませることができる場合もあります。
 
  */
 
-// Implement the Giraffe class here as a subclass of Animal
-// Hint: Implement the initializer method and override the eat method
+// ここにAnimalのサブクラスとしてGiraffeクラスを実装してください。
+// ヒント: イニシャライザメソッドを実装して、eatメソッドをオーバーライドします。
 class Giraffe: Animal {
 
     init(name: String) {
-        // don't forget to correct the call to the superclass initializer!
+        // superclassのイニシャライザへの呼び出しの修正を忘れないでください！
         super.init(name: "", favoriteFood: "")
     }
 
     override func eat(food: String) {
-        // check here if you don't like the food you were given...
-        // don't forget a call to the superclass eat function!
+        // 与えた食べ物が好きでない場合はここにチェックしてください...
+        // superclassのeat関数への呼び出しを忘れないでください。
     }
 }
 
@@ -87,49 +86,49 @@ class Giraffe: Animal {
 
  # Bees
 
- - callout(Challenge): Implement the `Bee` class as a subclass of `Animal`. Bees only eat pollen. If they are fed pollen _then print "YUM!!! <name> wants more pollen" and call `sleep`_. If fed anything else, the bee will complain in the same way as giraffes do. Additionally, bees never sleep, so if you call the `sleep` method on the Bee class, it should print `"<name> never sleeps"` instead of the standard sleep behavior.
+ - callout(課題): `Bee`クラスを`Animal`のサブクラスとして実装します。ミツバチは花粉しか食べません。花粉が与えられると"うまい！！！ <name>はもっと花粉を欲しがっています"`と出力され、`sleep`が呼び出されます。他のものが与えられると、ミツバチはキリンと同じように不平を言います。さらに、ミツバチは眠らないので、Beeクラスの`sleep`メソッドを呼び出すと、標準の動作ではなく`"<name>は決して眠りません"`と出力されます。
  */
 
-// Implement the Bee class here as a subclass of Animal
-// Hint: Implement the initializer method and override the sleep and eat methods
+// ここにAnimalのサブクラスとしてBeeクラスを実装します。
+// ヒント: イニシャライザメソッドを実装して、sleepメソッドとeatメソッドをオーバーライドします。
 class Bee: Animal {
 
 }
 
 
 /*:
- ## Testing
+ ## テスト
 
- This time, you'll be in charge of writing your own test code! It should output exactly this:
+ 今回は、自分でテストコードを作成してください！ 次のように出力するはずです。
 
-     Tigger eats meat
-     YUM!!! Tigger wants more meat
-     Pooh eats fish
-     YUM!!! Pooh wants more fish
-     Pooh eats meat
-     Pooh hibernates for 4 months
-     Rarity eats marshmallows
-     YUM!!! Rarity wants more marshmallows
-     Rarity sleeps in a cloud
-     YUCK!!! Gemma will not eat meat
-     Gemma eats leaves
-     YUM!!! Gemma wants more leaves
-     Gemma sleeps for 8 hours
-     YUCK!!! Stinger will not eat ice cream
-     Stinger eats pollen
-     YUM!!! Stinger wants more pollen
-     Stinger never sleeps
+     Tiggerは肉を食べます
+     うまい！！！ Tiggerはもっと肉を欲しがっています
+     Poohは魚を食べます
+     うまい！！！ Poohはもっと魚を欲しがっています
+     Poohは肉を食べます
+     Poohは4カ月冬眠します
+     Rarityはマシュマロを食べます
+     うまい！！！ Rarityはもっとマシュマロを欲しがっています
+     Rarityは雲の中で眠ります
+     まずい！！！ Gemmaは肉を食べません
+     Gemmaは葉を食べます
+     うまい！！！ Gemmaはもっと葉を欲しがっています
+     Gemmaは8時間眠ります
+     まずい！！！ Stingerはアイスクリームを食べません
+     Stingerは花粉を食べます
+     うまい！！！ Stingerはもっと花粉を欲しがっています
+     Stingerは決して眠りません
 
- - callout(Hint): The zoo currently has one animal of each type. There is:
-    - A `Tiger` named Tigger
-    - A `Bear` named Pooh
-    - A `Unicorn` named Rarity
-    - A `Giraffe` named Gemma
-    - A `Bee` named Stinger
+ - callout(ヒント): 動物園には現在各型の動物が1匹ずついます。次のようなものがあります:
+    - Tiggerという名前の`Tiger`
+    - Poohという名前の`Bear`
+    - Rarityという名前の`Unicorn`
+    - Gemmaという名前の`Giraffe`
+    - Stingerという名前の`Bee`
 
  */
 
 
 
 
-//: [Previous](@previous) | [Next](@next)
+//: [前へ](@previous) | [次へ](@next)
