@@ -159,7 +159,7 @@ let unfedGiraffe = Giraffe(name: "full Giraffe")
 let unfedBee = Bee(name: "full bee")
 
 let zookeeper = Zookeeper(name: "Zoe")
-zookeeper.feedAnimals(animals, food: "meat")
+zookeeper.feedAnimals(animals: animals, food: "meat")
 
 /*:
  ## Conclusion

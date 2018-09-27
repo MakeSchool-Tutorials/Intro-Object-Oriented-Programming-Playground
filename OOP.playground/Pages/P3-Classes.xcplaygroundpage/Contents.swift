@@ -149,8 +149,8 @@ class Tiger {
 }
 
 let tigger = Tiger(name: "Tigger")
-tigger.eat("meat")
-tigger.eat("kibble")
+tigger.eat(food: "meat")
+tigger.eat(food: "kibble")
 
 /*:
  # Testing

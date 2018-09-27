@@ -35,7 +35,7 @@ func eat(name: String, food: String) {
 
 }
 
-eat("Tigger", food: "meat")
-eat("Tigger", food: "kibble")
+eat(name: "Tigger", food: "meat")
+eat(name: "Tigger", food: "kibble")
 
 //: [Previous](@previous) | [Next](@next)

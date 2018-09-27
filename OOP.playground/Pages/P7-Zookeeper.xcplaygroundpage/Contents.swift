@@ -103,6 +103,6 @@ let animals: [Animal] = [
     Bee(name: "Stinger")
 ]
 let zookeeper = Zookeeper(name: "ZoeBot")
-zookeeper.feedAnimals(animals, food: "meat")
+zookeeper.feedAnimals(animals: animals, food: "meat")
 
 //: [Previous](@previous) | [Next](@next)

@@ -24,7 +24,7 @@ func sleep(name: String) {
     
 }
 
-sleep("Tigger")
+sleep(name: "Tigger")
 
 /*:
  - note: When you're done, copy the contents of your completed sleep function, so we can bring it over to the next section.
